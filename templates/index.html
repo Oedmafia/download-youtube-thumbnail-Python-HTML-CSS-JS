@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Download Youtube Thumbnail</title>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='arrow-down.png')}}" id="logo" alt="Logo">
+        <h1 id="tittle">Download Youtube Thumbnail</h1>
+    </header>
+    <div class="container">
+        <p>Para realizar o download da thumbnail você precisará apenas do link do vídeo.</p>
+        <div id="input-url">
+            <h3>Inisira a Url</h3>
+            <input type="url" id="link_video" name="link_video" required>
+        </div>
+        <button onclick="get_thumbnail()" id="btn-download" disabled>Baixar</button>
+    </div>
+    <div class="return-thumbnail">
+        <img id="img" src="">
+    </div>
+    <footer>
+        <h2>Desenvolvido por Edmar Silva</h2>
+        <div class="redes-sociais">
+            <div class="redes">
+                <img src="{{ url_for('static', filename='linkedin-icon.png')}}" class="redes-images" alt="Linkedin">
+                <a href="https://www.linkedin.com/in/edmarsilvaa/" target="_blank">Linkedin</a>
+            </div>
+            <div class="redes">
+                <img src="{{ url_for('static', filename='github-icon.png')}}" class="redes-images" alt="Github">
+                <a href="https://github.com/Oedmafia" target="_blank">Github</a>
+            </div>
+        </div>
+    </footer>
+<script>
+    function get_thumbnail(){
+        link_video = document.getElementById('link_video').value
+        video_id = link_video.split('v=')[1]
+        document.getElementById("img").setAttribute('src', `https://i3.ytimg.com/vi/${video_id}/maxresdefault.jpg`)
+    }
+
+    const linkInput = document.getElementById('link_video');
+    const downloadButton = document.getElementById('btn-download');
+
+    linkInput.addEventListener('input', function() {
+    downloadButton.disabled = !linkInput.value;
+    });
+</script>
+</body>
+</html>

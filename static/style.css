@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-image: linear-gradient(to top right, black, red);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+#logo {
+    width: 30px;
+    height: 30px;
+    margin-right: 20px;
+}
+
+.container {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.container p {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#input-url {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#input-url h3 {
+    margin-right: 10px;
+}
+
+#link_video {
+    border: none;
+    outline: none;
+    height: 30px;
+    width: 355px;
+    border-radius: 25px;
+    background-color: transparent;
+    border: 1px solid black;
+}
+
+#link_video:focus {
+    background-color: rgba(255, 0, 0, 0.05);
+    border-color: red;
+}
+
+#btn-download {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    width: 470px;
+    height: 30px;
+    border: 2px solid red;
+    background-color: red;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.return-thumbnail img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.redes-sociais {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.redes a {
+    margin-left: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+
+.redes-images {
+    width: 2%;
+}
+
+@media screen and (max-width: 560px) {
+    #tittle {
+        display: none;
+    }
+
+    header {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #input-url {
+        flex-direction: column;
+    }
+
+    #link_video, #btn-download {
+        width: 90%;
+    }
+}
